@@ -1,0 +1,82 @@
+export type FaceGeneration = {
+  current: string;
+  issuedFrom: string;
+  previous: string;
+  previousYears: string;
+  legacy: string;
+  magStripe: boolean;
+  edl: boolean;
+  realIdMark: string;
+  numberedIso: boolean;
+  u21: "vertical" | "vertical-to-65";
+  back: string;
+  source: string;
+};
+
+export const ISO_FIELD_ORDER =
+  "4d DLN · 4b EXP · 3 DOB · 1 family · 2 given · 8 class · 9 rest · 9a end · 12 DD · 4a ISS · 5 audit · 15–19 physical";
+
+const STAR = "gold star-in-circle";
+
+export const FACE_GENERATIONS: Record<string, FaceGeneration> = {
+  AL: { current: "2020 REAL ID", issuedFrom: "2020", previous: "2010s REAL ID / standard", previousYears: "2010–2019", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "alea.gov" },
+  AK: { current: "2018 REAL ID", issuedFrom: "2018", previous: "Pre-REAL ID standard", previousYears: "~2010–2018", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "doa.alaska.gov/dmv" },
+  AZ: { current: "2014 current + vertical-to-65", issuedFrom: "2014", previous: "Teslin / early digital", previousYears: "~2006–2014", legacy: "1990s–2000s photo card", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical-to-65", back: "1D + PDF417", source: "azdot.gov/mvd" },
+  AR: { current: "2018 REAL ID", issuedFrom: "2018", previous: "Pre-2018 standard", previousYears: "~2010–2018", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "dfa.arkansas.gov" },
+  CA: { current: "2025 landscape", issuedFrom: "2025-10-01", previous: "2018 gold-bear", previousYears: "2018–2025-09", legacy: "Earlier gold-bear to 2018", magStripe: false, edl: false, realIdMark: "gold bear + star", numberedIso: true, u21: "vertical", back: "PDF417; mag stripe dropped 2025", source: "dmv.ca.gov" },
+  CO: { current: "2019 REAL ID", issuedFrom: "2019", previous: "2016–2018 transition", previousYears: "2016–2018", legacy: "Pre-2016 mountain card", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "dmv.colorado.gov" },
+  CT: { current: "2017 REAL ID", issuedFrom: "2017", previous: "Pre-2017 standard", previousYears: "~2010–2017", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "ct.gov/dmv" },
+  DE: { current: "2018 REAL ID", issuedFrom: "2018", previous: "Pre-2018 standard", previousYears: "~2010–2018", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "dmv.de.gov" },
+  DC: { current: "2013 / current REAL ID", issuedFrom: "2013", previous: "Older red-stripe", previousYears: "pre-2013", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "dmv.dc.gov" },
+  FL: { current: "2017 secure design", issuedFrom: "2017", previous: "Pre-2017 standard", previousYears: "~2010–2017", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417; mag stripe phasing", source: "flhsmv.gov" },
+  GA: { current: "2019 REAL ID", issuedFrom: "2019", previous: "Pre-2019 standard", previousYears: "~2010–2019", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "dds.georgia.gov" },
+  HI: { current: "2026 redesign", issuedFrom: "2026", previous: "2009 rainbow card", previousYears: "2009–2026", legacy: "Pre-2009 digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417; county back art", source: "hidot.hawaii.gov" },
+  ID: { current: "2017 REAL ID", issuedFrom: "2017", previous: "Pre-2017 standard", previousYears: "~2010–2017", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "itd.idaho.gov" },
+  IL: { current: "2016 REAL ID", issuedFrom: "2016", previous: "Pre-2016 standard", previousYears: "~2007–2016", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "ilsos.gov" },
+  IN: { current: "2017 REAL ID", issuedFrom: "2017", previous: "Pre-2017 standard", previousYears: "~2010–2017", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "in.gov/bmv" },
+  IA: { current: "2018 REAL ID", issuedFrom: "2018", previous: "Pre-2018 standard", previousYears: "~2010–2018", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "iowadot.gov" },
+  KS: { current: "2017 REAL ID", issuedFrom: "2017", previous: "Pre-2017 standard", previousYears: "~2010–2017", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "ksrevenue.gov" },
+  KY: { current: "2019 REAL ID", issuedFrom: "2019", previous: "Pre-2019 standard", previousYears: "~2010–2019", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "drive.ky.gov" },
+  LA: { current: "2014 / current", issuedFrom: "2014", previous: "Pre-2014 standard", previousYears: "~2006–2014", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "expresslane.org" },
+  ME: { current: "2019 REAL ID", issuedFrom: "2019", previous: "Pre-2019 standard", previousYears: "~2010–2019", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: "state outline + star", numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "maine.gov/sos/bmv" },
+  MD: { current: "2016 REAL ID", issuedFrom: "2016", previous: "Pre-2016 standard", previousYears: "~2009–2016", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "mva.maryland.gov" },
+  MA: { current: "2018 REAL ID", issuedFrom: "2018", previous: "Pre-2018 standard", previousYears: "~2010–2018", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "mass.gov/rmv" },
+  MI: { current: "2019 REAL ID + EDL", issuedFrom: "2019", previous: "Pre-2019 + earlier EDL", previousYears: "~2011–2019", legacy: "2000s digitized", magStripe: true, edl: true, realIdMark: "state outline + star; EDL flag", numberedIso: false, u21: "vertical", back: "1D + PDF417; EDL flag", source: "michigan.gov/sos" },
+  MN: { current: "2018 REAL ID + EDL", issuedFrom: "2018", previous: "Pre-2018 + earlier EDL", previousYears: "~2010–2018", legacy: "2000s digitized", magStripe: true, edl: true, realIdMark: "gold star; EDL flag", numberedIso: false, u21: "vertical", back: "1D + PDF417; EDL flag", source: "dps.mn.gov" },
+  MS: { current: "2018–19 REAL ID", issuedFrom: "2018", previous: "Pre-2018 standard", previousYears: "~2010–2018", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "dps.ms.gov" },
+  MO: { current: "2018 REAL ID", issuedFrom: "2018", previous: "Pre-2018 standard", previousYears: "~2010–2018", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "dor.mo.gov" },
+  MT: { current: "2015 REAL ID", issuedFrom: "2015", previous: "Pre-2015 standard", previousYears: "~2008–2015", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "dojmt.gov" },
+  NE: { current: "2017 REAL ID", issuedFrom: "2017", previous: "Pre-2017 standard", previousYears: "~2010–2017", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "dmv.nebraska.gov" },
+  NV: { current: "2021 Battle Born", issuedFrom: "2021-07", previous: "2014 bighorn / capitol", previousYears: "2014–2021", legacy: "Pre-2014 standard", magStripe: true, edl: false, realIdMark: "gold NV outline + star", numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "dmv.nv.gov" },
+  NH: { current: "2017 REAL ID", issuedFrom: "2017", previous: "Pre-2017 standard", previousYears: "~2010–2017", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: "Old Man + star", numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "nh.gov/safety/dmv" },
+  NJ: { current: "2020 REAL ID", issuedFrom: "2020", previous: "Pre-2020 standard", previousYears: "~2011–2020", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "nj.gov/mvc" },
+  NM: { current: "2016 REAL ID", issuedFrom: "2016", previous: "Pre-2016 standard", previousYears: "~2009–2016", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "mvd.newmexico.gov" },
+  NY: { current: "2022 security redesign + EDL", issuedFrom: "2022-03", previous: "2017 REAL ID", previousYears: "2017–2022", legacy: "Pre-2017 Empire State", magStripe: true, edl: true, realIdMark: "gold star; EDL flag", numberedIso: false, u21: "vertical", back: "1D + PDF417; EDL flag", source: "dmv.ny.gov" },
+  NC: { current: "2018 REAL ID", issuedFrom: "2018", previous: "Pre-2018 standard", previousYears: "~2010–2018", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "ncdot.gov/dmv" },
+  ND: { current: "2014 REAL ID", issuedFrom: "2014", previous: "Pre-2014 standard", previousYears: "~2008–2014", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "dot.nd.gov" },
+  OH: { current: "2018 REAL ID", issuedFrom: "2018", previous: "Pre-2018 standard", previousYears: "~2010–2018", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "bmv.ohio.gov" },
+  OK: { current: "2018 REAL ID", issuedFrom: "2018", previous: "Pre-2018 standard", previousYears: "~2010–2018", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "oklahoma.gov/dps" },
+  OR: { current: "2018 REAL ID", issuedFrom: "2018", previous: "Pre-2018 standard", previousYears: "~2010–2018", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "oregon.gov/odot/dmv" },
+  PA: { current: "2022 redesign", issuedFrom: "2022-09", previous: "Pre-2022 REAL ID / standard", previousYears: "~2011–2022", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "penndot.pa.gov" },
+  RI: { current: "2018 REAL ID", issuedFrom: "2018", previous: "Pre-2018 standard", previousYears: "~2010–2018", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "dmv.ri.gov" },
+  SC: { current: "2025 palmetto", issuedFrom: "2025-07", previous: "Pre-2025 REAL ID / standard", previousYears: "~2011–2025", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: true, u21: "vertical", back: "PDF417 top + 1D + class legend", source: "scdmvonline.com" },
+  SD: { current: "2026 redesign", issuedFrom: "2026", previous: "2015 Rushmore / prairie", previousYears: "2015–2026", legacy: "Pre-2015 standard", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "dps.sd.gov" },
+  TN: { current: "2018 REAL ID", issuedFrom: "2018", previous: "Pre-2018 standard", previousYears: "~2010–2018", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "tn.gov/safety" },
+  TX: { current: "2025 redesign", issuedFrom: "2025-08-18", previous: "2020–2025 family (valid through 2033-09-01)", previousYears: "2020–2025", legacy: "2009–2020 family, sunset 2026-02-24", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "dps.texas.gov" },
+  UT: { current: "2016 REAL ID", issuedFrom: "2016", previous: "Pre-2016 standard", previousYears: "~2009–2016", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "dmv.utah.gov" },
+  VT: { current: "2016 REAL ID + EDL", issuedFrom: "2016", previous: "Pre-2016 + earlier EDL", previousYears: "~2009–2016", legacy: "2000s digitized", magStripe: true, edl: true, realIdMark: "gold star; EDL flag", numberedIso: false, u21: "vertical", back: "1D + PDF417; EDL flag", source: "dmv.vermont.gov" },
+  VA: { current: "2023 redesign", issuedFrom: "2023-04-24", previous: "Pre-2023 REAL ID / standard", previousYears: "~2011–2023", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: true, u21: "vertical", back: "1D + PDF417", source: "dmv.virginia.gov" },
+  WA: { current: "2018 design + EDL", issuedFrom: "2018-07", previous: "2017-02 to 2018-06 interim", previousYears: "2017–2018", legacy: "Pre-2017 Evergreen", magStripe: true, edl: true, realIdMark: "gold star; EDL flag", numberedIso: false, u21: "vertical", back: "1D + PDF417; EDL flag", source: "dol.wa.gov" },
+  WV: { current: "2017 REAL ID", issuedFrom: "2017", previous: "Pre-2017 standard", previousYears: "~2010–2017", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "transportation.wv.gov" },
+  WI: { current: "2015 REAL ID", issuedFrom: "2015", previous: "Pre-2015 standard", previousYears: "~2008–2015", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "wisconsindot.gov" },
+  WY: { current: "2014 REAL ID", issuedFrom: "2014", previous: "Pre-2014 standard", previousYears: "~2008–2014", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "dot.wyo.gov" },
+  PR: { current: "2015 / current", issuedFrom: "2015", previous: "Pre-2015 DISCO", previousYears: "to 2015", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "dtop.pr.gov" },
+  GU: { current: "2018 REAL ID", issuedFrom: "2018", previous: "Pre-2018 territory", previousYears: "to 2018", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "dmv.guam.gov" },
+  VI: { current: "2017 REAL ID", issuedFrom: "2017", previous: "Pre-2017 territory", previousYears: "to 2017", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "vi.gov" },
+  AS: { current: "2024 REAL ID certified", issuedFrom: "2024-02-14", previous: "Pre-2024 territory", previousYears: "to 2024", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "dhs.gov/real-id" },
+  MP: { current: "2020 REAL ID", issuedFrom: "2020", previous: "Pre-2020 territory", previousYears: "to 2020", legacy: "2000s digitized", magStripe: true, edl: false, realIdMark: STAR, numberedIso: false, u21: "vertical", back: "1D + PDF417", source: "dhs.gov/real-id" },
+};
+
+export function generationFor(code: string): FaceGeneration {
+  return FACE_GENERATIONS[code] ?? FACE_GENERATIONS.VA;
+}
